@@ -1,4 +1,4 @@
-﻿var c,i,temp,cou:integer;
+﻿var c,x,temp,cou:integer;
 f:text;
 flag:boolean;
 begin
@@ -6,26 +6,25 @@ begin
   assign(f,'data_5.txt');
   reset(f);
   while not eof(f) do begin 
-  readln(f,i);
+  readln(f,x);
     if flag then begin 
-    temp:= i;
+    temp:= x;
     cou:=1;
     flag:=false;
     end
   else begin     
-  if i = temp then 
+  if x = temp then 
     cou:=cou+1
   else begin
     if cou > c then 
     c:=cou;
-    
-    temp:=i;
+    temp:=x;
     cou:=1;
   end;
   end;
   end;
-  
-  
+  if cou > c then 
+    c:=cou;
   close(f);
   assign(f,'output_5.txt');
   rewrite(f);
