@@ -8,7 +8,7 @@ end;
 var f: text;
 i,j: integer;
 s: string;
-midh,midw : double;
+midh,midw : real;
 cla : array of person;
 begin
   assign(f,'input.txt');
